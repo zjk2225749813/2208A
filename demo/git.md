@@ -29,11 +29,22 @@
 * 灰度环境：staging ---staging/replse（也叫做：备机环境，半线上环境）
 * 线上环境：production ---master  （全量环境，上机环境）
 
+
+---
+
+### 3.git的工作区域
+
+工作区：在电脑里能看到的目录
+
+暂存区：英文叫 stage 或 index。一般存放在 **.git** 目录下的 index 文件（.git/index）中，所以我们把暂存区也叫 index
+
+版本库：工作区有一个隐藏目录 **.git**，这个不算工作区，而是 Git 的版本库
+
 ---
 
 
 
-### git指令
+### 4.git指令
 
 git config --global user.name xxx    --配置用户名
 git config --global user.email xxx	--配置邮箱
@@ -57,6 +68,8 @@ git log --查看修改的版本
 
 git reflog --查看所有版本
 
+git reset --hard 版本id       --回退版本
+
 git branch '分支名'  --创建分支
 
 git checkout '分支名'  --切换分支
@@ -69,6 +82,6 @@ git remote add origin 'ssh地址 或者是 https地址'  --链接GitHub仓库
 
 git branch -d '分支名'  --删除本地分支名
 
-git branch origin -d '分支名' --删除GitHub中分支名
+git push origin -d '分支名' --删除GitHub中分支名
 
 git merge 分支名  --合并分支
