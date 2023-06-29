@@ -1,7 +1,15 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <HelloWorld>
+      <template slot-scope="games">
+        <ul>
+          <li v-for="item,index in games.games" :key="index">{{item.name}},{{item.names}}</li>
+        </ul>
+      </template>
+    </HelloWorld>
+
+    <button @click="check">params传参动态</button>
   </div>
 </template>
 
@@ -13,6 +21,12 @@ export default {
   name: 'HomeView',
   components: {
     HelloWorld
-  }
+  },
+  methods: {
+    // 动态路由传参
+    check(){
+      this.$router.push({name:'user',params:{id:110}})
+    }
+   }
 }
 </script>
